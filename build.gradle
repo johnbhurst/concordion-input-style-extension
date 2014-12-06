@@ -1,0 +1,44 @@
+// John Hurst (john.b.hurst@gmail.com)
+// 2014-12-06
+
+description = "An extension to Concordion to highlight 'input values' in the output specification"
+
+apply from: "https://raw.githubusercontent.com/concordion/concordion-extension-build/master/extension-build.gradle"
+apply plugin: "java"
+apply plugin: "idea"
+
+wrapper {
+    gradleVersion = "2.2"
+}
+
+repositories {
+    mavenCentral()
+}
+
+project.ext {
+    developers = {
+        developer {
+            id 'john.hurst.nz'
+            name 'John Hurst'
+            roles { role 'Project owner' }
+            url 'http://gplus.to/john.b.hurst'
+        }
+    }
+    inceptionYear = '2014'
+}
+
+githubPages {
+  repoUri = 'git@github.com:johnbhurst/concordion-input-style-extension.git'
+  pages {
+      from 'docs'
+
+      from ('build/reports/spec/spec/concordion/ext/screenshot/') {
+        into 'spec'
+      }
+
+      from ('build/docs/javadoc/') {
+        into 'api'
+      }
+  }
+}
+
