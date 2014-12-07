@@ -28,7 +28,7 @@ project.ext {
 }
 
 githubPages {
-  repoUri = 'git@github.com:johnbhurst/concordion-input-style-extension.git'
+  repoUri = 'git@github.com:concordion/concordion-input-style-extension.git'
   pages {
       from 'docs'
 
