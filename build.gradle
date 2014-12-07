@@ -32,7 +32,7 @@ githubPages {
   pages {
       from 'docs'
 
-      from ('build/reports/spec/spec/concordion/ext/screenshot/') {
+      from ('build/reports/spec/') {
         into 'spec'
       }
 
