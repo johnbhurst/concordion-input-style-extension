@@ -7,10 +7,6 @@ apply from: "https://raw.githubusercontent.com/concordion/concordion-extension-b
 apply plugin: "java"
 apply plugin: "idea"
 
-wrapper {
-    gradleVersion = "2.2"
-}
-
 repositories {
     mavenCentral()
 }
@@ -27,12 +23,13 @@ project.ext {
     inceptionYear = '2014'
 }
 
-githubPages {
-  repoUri = 'git@github.com:johnbhurst/concordion-input-style-extension.git'
-  pages {
+gitPublish {
+  repoUri = 'git@github.com:concordion/concordion-input-style-extension.git'
+  branch = 'gh-pages'
+	contents {
       from 'docs'
 
-      from ('build/reports/spec/spec/concordion/ext/screenshot/') {
+      from ('build/reports/spec/') {
         into 'spec'
       }
 
